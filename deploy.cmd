@@ -74,7 +74,7 @@ pushd "%DEPLOYMENT_TARGET%"
 IF NOT EXIST "D:\home\site\tools\python36*" (
 
   echo Creating Python 3.6.1 x64 virtual environment...
-  nuget.exe install -Source https://www.siteextensions.net/api/v2/ -OutputDirectory D:\home\site\tools python361x64
+  nuget.exe install -OutputDirectory D:\home\site\tools python -Version 3.6.3
   mv /d/home/site/tools/python3*/content/python*/* /d/home/site/tools/
   IF !ERRORLEVEL! NEQ 0 goto error
 
