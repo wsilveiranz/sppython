@@ -75,7 +75,7 @@ IF NOT EXIST "D:\home\site\tools\python36*" (
 
   echo Creating Python 3.6.1 x64 virtual environment...
   nuget.exe install -Source https://www.siteextensions.net/api/v2/ -OutputDirectory D:\home\site\tools python361x64
-  mv /d/home/site/tools/python.3*/tools/* /d/home/site/tools/
+  mv /d/home/site/tools/python3*/content/python*/* /d/home/site/tools/
   IF !ERRORLEVEL! NEQ 0 goto error
 
 ) ELSE (
