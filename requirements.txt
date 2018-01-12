@@ -11,3 +11,4 @@ pyodbc==4.0.17
 regex==2017.4.5
 scikit-learn==0.19.1
 sumy==0.7.0
+textacy==0.5.0
