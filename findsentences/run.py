@@ -7,7 +7,7 @@ postreqdata = json.loads(open(os.environ['req']).read())
 #create the spaCy model
 nlp = spacy.load('en_core_web_sm')
 
-document = nlp(postrequest)
+document = nlp(postreqdata["sentence"])
 
 for token in document:
     print(token.text)
