@@ -14,5 +14,5 @@ for token in tokenList:
     print(token.text)
 
 response = open(os.environ['res'], 'w')
-response.write(json.dumps(tokenList))
+response.write(json.dumps(c,default=lambda,o: o)
 response.close()
