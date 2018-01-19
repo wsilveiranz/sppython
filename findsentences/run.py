@@ -13,5 +13,5 @@ for token in document:
     print(token.text)
 
 response = open(os.environ['res'], 'w')
-response.write(len(doucment.tokens))
+response.write(len(document.tokens))
 response.close()
