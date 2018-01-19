@@ -1,7 +1,7 @@
 import spacy
 import json
 import os
-from flask import jsonify
+
 
 postreqdata = json.loads(open(os.environ['req']).read())
 
@@ -14,5 +14,5 @@ for token in tokenList:
     print(token.text)
 
 response = open(os.environ['res'], 'w')
-response.write(jsonify(tokenList))
+response.write(json.dumps(tokenList))
 response.close()
