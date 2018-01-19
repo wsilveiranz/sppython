@@ -7,11 +7,11 @@ postreqdata = json.loads(open(os.environ['req']).read())
 #create the spaCy model
 nlp = spacy.load('en_core_web_sm')
 
-document = nlp(postreqdata["sentence"])
+tokenList = nlp(postreqdata["sentence"])
 
-for token in document:
+for token in tokenList:
     print(token.text)
 
 response = open(os.environ['res'], 'w')
-response.write(len(document.tokens))
+response.write(len(tokenList))
 response.close()
