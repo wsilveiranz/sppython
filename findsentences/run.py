@@ -2,6 +2,12 @@ import spacy
 import json
 import os
 
+def jdefault(o):
+    if isinstance(o, set):
+        return list(o)
+    return o.__dict__
+
+
 
 postreqdata = json.loads(open(os.environ['req']).read())
 
@@ -14,5 +20,5 @@ for token in tokenList:
     print(token.text)
 
 response = open(os.environ['res'], 'w')
-response.write(json.dumps(tokenList,default=lambda o: o.__dict__))
+response.write(json.dumps(tokenList, default=jdefault))
 response.close()
