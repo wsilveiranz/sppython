@@ -13,5 +13,5 @@ for token in tokenList:
     print(token.text)
 
 response = open(os.environ['res'], 'w')
-response.write(len(tokenList))
+response.write(str(len(tokenList))
 response.close()
