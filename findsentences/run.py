@@ -1,7 +1,7 @@
 import spacy
 import json
 import os
-from array import *
+import numpy
 
 def jdefault(o):
     if isinstance(o, set):
@@ -15,9 +15,9 @@ postreqdata = json.loads(open(os.environ['req']).read())
 #create the spaCy model
 nlp = spacy.load('en_core_web_sm')
 
-tokenArray = nlp(postreqdata["sentence"])
+docs = nlp(postreqdata["sentence"])
 
-tokenList = tokenArray.tolist()
+tokenList = docs.to_array()
 
 response = open(os.environ['res'], 'w')
 response.write(json.dumps(tokenList, default=jdefault))
