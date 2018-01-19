@@ -5,7 +5,7 @@ import os
 postreqdata = json.loads(open(os.environ['req']).read())
 
 #create the spaCy model
-nlp = spacy.load('en_core_web_lg')
+nlp = spacy.load('en_core_web_sm')
 
 document = nlp(postrequest)
 
